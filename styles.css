@@ -1,0 +1,77 @@
+:root {
+  /* Spacing scale */
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-500: 40px;
+
+  /* Colors */
+  --color-page-bg: #E0E8F9;       /* light page background */
+  --color-card-bg: #FFFFFF;       /* card white */
+  --color-qr-bg:  #6348FF;        /* or match your blue */
+  --color-heading: #1F2F56;       /* dark blue/black */
+  --color-text:    #6B7A99;       /* greyish */
+
+  /* Radii & shadows */
+  --radius-card: 16px;
+  --radius-qr:   8px;
+  --shadow-card: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-page-bg);
+  font-family: 'Outfit', sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 320px;
+  height: 528px;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-200) var(--spacing-200) var(--spacing-500);
+  text-align: center;
+}
+
+.card__image {
+  background: var(--color-qr-bg);
+  border-radius: var(--radius-qr);
+  overflow: hidden;
+}
+
+.card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card__title {
+  margin-top: var(--spacing-300);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.card__text {
+  margin-top: var(--spacing-200);
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+/* MOBILE & DESKTOP: the card will always cap at 320px */
+@media (max-width: 350px) {
+  .card { margin: 0 8px; }
+}

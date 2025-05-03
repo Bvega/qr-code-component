@@ -1,19 +1,20 @@
 :root {
+  /* Colors from style-guide.md */
+  --color-page-bg: hsl(212, 45%, 89%);  /* Slate 300 */
+  --color-card-bg: hsl(0, 0%, 100%);     /* White */
+  --color-heading: hsl(218, 44%, 22%);   /* Slate 900 */
+  --color-text: hsl(216, 15%, 48%);      /* Slate 500 */
+
   /* Spacing scale */
   --spacing-200: 16px;
   --spacing-300: 24px;
   --spacing-500: 40px;
 
-  /* Colors */
-  --color-page-bg: #E0E8F9;       /* light page background */
-  --color-card-bg: #FFFFFF;       /* card white */
-  --color-qr-bg:  #6348FF;        /* or match your blue */
-  --color-heading: #1F2F56;       /* dark blue/black */
-  --color-text:    #6B7A99;       /* greyish */
-
-  /* Radii & shadows */
+  /* Radii */
   --radius-card: 16px;
-  --radius-qr:   8px;
+  --radius-qr: 8px;
+
+  /* Optional shadow (not in style-guide, but from design) */
   --shadow-card: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,12 +40,15 @@ body {
   background: var(--color-card-bg);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  padding: var(--spacing-200) var(--spacing-200) var(--spacing-500);
+  padding:
+    var(--spacing-200) /* top */
+    var(--spacing-200) /* sides */
+    var(--spacing-500) /* bottom */;
   text-align: center;
 }
 
 .card__image {
-  background: var(--color-qr-bg);
+  background: var(--color-page-bg); /* page bg shows behind QR */
   border-radius: var(--radius-qr);
   overflow: hidden;
 }
@@ -57,21 +61,21 @@ body {
 
 .card__title {
   margin-top: var(--spacing-300);
-  font-size: 18px;
+  font-size: 18px;              /* custom – style-guide covers body only */
   line-height: 28px;
+  font-weight: 700;             /* changed to weight 700 per guide */
   color: var(--color-heading);
-  font-weight: 600;
 }
 
 .card__text {
   margin-top: var(--spacing-200);
-  font-size: 15px;
+  font-size: 15px;              /* body size per style-guide */
   line-height: 25px;
+  font-weight: 400;             /* body weight per style-guide */
   color: var(--color-text);
-  font-weight: 400;
 }
 
-/* MOBILE & DESKTOP: the card will always cap at 320px */
+/* Responsive NOTE: card max‐width is 320px; design mobile at 375px container */
 @media (max-width: 350px) {
   .card { margin: 0 8px; }
 }

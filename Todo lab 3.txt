@@ -1,0 +1,6 @@
+1. Refactor HTML to use Bootstrap utility classes and components (card, grid, text-center, p-4, etc.).
+2. Ensure the QR Code component is centered responsively using Bootstrap's grid system.
+3. Remove redundant custom CSS file or styles.
+4. Test the component across different screen sizes to confirm responsiveness.
+5. Commit your changes and push to GitHub.
+6. Open a pull request documenting the Bootstrap refactoring.
